@@ -1,0 +1,50 @@
+# =========================
+# Node / React
+# =========================
+
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# =========================
+# Spring Boot / Java
+# =========================
+
+BookStore/target/
+BookStore/.classpath
+BookStore/.project
+BookStore/.settings/
+
+# =========================
+# Environment / Secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+.idea/
+
+# =========================
+# OS generated files
+# =========================
+
+.DS_Store
+Thumbs.db
+
+# =========================
+# Java generated files
+# =========================
+
+*.class
+
+# =========================
+# Logs
+# =========================
+
+*.log

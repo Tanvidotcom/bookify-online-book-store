@@ -1,0 +1,174 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  background: #f8f6f1;
+  border-bottom: 1px solid #e5e0d7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "DM Serif Display", serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #242321;
+
+  transition: transform 0.25s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  position: relative;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4d4a45;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: #8a5a44;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  width: 0;
+  height: 1.5px;
+  background: #8a5a44;
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links .nav-login {
+  background: #242321;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.nav-links .nav-login::after {
+  display: none;
+}
+
+.nav-links .nav-login:hover {
+  background: #8a5a44;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+@media (max-width: 700px) {
+  .navbar-container {
+    padding: 16px 20px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-links .nav-login {
+    padding: 8px 13px;
+  }
+}
+/* =========================
+   REGISTER LINK
+========================= */
+
+.register-link {
+  color: #4d4a45;
+}
+
+.register-link:hover {
+  color: #8a5a44;
+}
+/* =========================
+   USER MENU
+========================= */
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #242321;
+}
+
+.logout-button {
+  border: none;
+  background: transparent;
+
+  color: #8a5a44;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 7px 0;
+
+  transition: color 0.2s ease;
+}
+
+.logout-button:hover {
+  color: #242321;
+}
+
+
+@media (max-width: 700px) {
+
+  .user-menu {
+    gap: 9px;
+  }
+
+  .user-name {
+    font-size: 12px;
+  }
+
+  .logout-button {
+    font-size: 11px;
+  }
+}
