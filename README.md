@@ -58,29 +58,6 @@ The system provides:
 - Order persistence
 - Responsive design
 
----
-
-# 🎯 Objectives
-
-The main objectives of BOOKIFY are:
-
-1. Develop a responsive online bookstore website.
-2. Provide a simple and user-friendly interface for browsing books.
-3. Implement user registration and login functionality.
-4. Store user information securely in MySQL.
-5. Hash user passwords using BCrypt.
-6. Retrieve book information dynamically from the backend.
-7. Implement book search and category filtering.
-8. Implement shopping cart functionality.
-9. Allow users to increase, decrease, and remove cart items.
-10. Provide a checkout interface for delivery information.
-11. Store customer orders in the database.
-12. Store individual order items associated with each order.
-13. Develop REST APIs using Spring Boot.
-14. Maintain separation between frontend, backend, and database layers.
-15. Provide a responsive interface for desktop, tablet, and mobile devices.
-
----
 
 # 🏗️ System Architecture
 
@@ -205,47 +182,6 @@ The Spring Boot backend follows a layered architecture:
                  └─────────────────┘
 ```
 
-### Controller Layer
-
-The controller layer receives HTTP requests and exposes REST endpoints.
-
-Controllers:
-
-- `UserController`
-- `BookController`
-- `OrderController`
-
-### Service Layer
-
-The service layer contains the application's business logic.
-
-Services:
-
-- `UserService`
-- `BookService`
-- `OrderService`
-
-### Repository Layer
-
-The repository layer communicates with the database using Spring Data JPA.
-
-Repositories:
-
-- `UserRepository`
-- `BookRepository`
-- `OrderRepository`
-- `OrderItemRepository`
-
-### Entity Layer
-
-The entity layer represents database tables as Java classes using JPA.
-
-Entities:
-
-- `User`
-- `Book`
-- `Order`
-- `OrderItem`
 
 ---
 
@@ -381,8 +317,6 @@ bookify-online-book-store/
 | CSS3 | — | Styling and responsive design |
 | BCrypt | Spring Security Crypto | Password hashing |
 
-> Versions managed by Spring Boot or npm can be verified directly in `pom.xml` and `package-lock.json`.
-
 ---
 
 # 🔐 Security
@@ -392,7 +326,6 @@ BOOKIFY implements basic security practices for user authentication and applicat
 ## Password Hashing
 
 Passwords are never intentionally stored as plain text.
-
 BCrypt is used to hash passwords before they are saved to the database.
 
 ```text
@@ -421,7 +354,6 @@ http://localhost:5173
 ## Sensitive Configuration
 
 Database passwords and other secrets should not be committed to GitHub.
-
 The repository uses:
 
 ```text
@@ -429,7 +361,6 @@ YOUR_MYSQL_PASSWORD
 ```
 
 as a placeholder.
-
 Each developer should configure their own local MySQL password.
 
 ---
@@ -521,316 +452,6 @@ JSON Response
       │
       ▼
 React displays books
-```
-
----
-
-## 4. Search and Filtering Workflow
-
-```text
-Catalogue
-    │
-    ├───────────────┐
-    │               │
-    ▼               ▼
-Search by       Category
-Title/Author    Filter
-    │               │
-    └───────┬───────┘
-            ▼
-     Filtered Results
-```
-
----
-
-## 5. Shopping Cart Workflow
-
-```text
-Catalogue
-    │
-    ▼
-Add to Cart
-    │
-    ▼
-Browser localStorage
-    │
-    ▼
-Cart Page
-    │
-    ├── Increase Quantity
-    │
-    ├── Decrease Quantity
-    │
-    └── Remove Item
-    │
-    ▼
-Calculate Total
-```
-
----
-
-## 6. Checkout Workflow
-
-```text
-Cart
- │
- ▼
-Proceed to Checkout
- │
- ▼
-Enter Delivery Details
- │
- ├── Full Name
- ├── Email
- ├── Phone
- ├── Address
- ├── City
- └── Pincode
- │
- ▼
-Place Order
- │
- ▼
-POST /api/orders
- │
- ▼
-OrderController
- │
- ▼
-OrderService
- │
- ├───────────────┐
- ▼               ▼
-OrderRepository  OrderItemRepository
- │               │
- └───────┬───────┘
-         ▼
-      MySQL
-```
-
----
-
-## 7. Order Completion Workflow
-
-```text
-Order Successfully Saved
-          │
-          ▼
-     Cart Cleared
-          │
-          ▼
-   Order Success Page
-          │
-          ▼
-Display Order Information
-          │
-          ├── Order ID
-          ├── Total
-          └── Status
-```
-
----
-
-# 🌐 REST API Documentation
-
-## User APIs
-
-### Register User
-
-```http
-POST /api/users/register
-```
-
-Example request:
-
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "password": "password123"
-}
-```
-
-### Login User
-
-```http
-POST /api/users/login
-```
-
-Example request:
-
-```json
-{
-  "email": "john@example.com",
-  "password": "password123"
-}
-```
-
----
-
-# 📚 Book APIs
-
-### Get All Books
-
-```http
-GET /api/books
-```
-
-### Get Book By ID
-
-```http
-GET /api/books/{id}
-```
-
-### Add Book
-
-```http
-POST /api/books
-```
-
----
-
-# 📦 Order APIs
-
-### Create Order
-
-```http
-POST /api/orders
-```
-
-### Get All Orders
-
-```http
-GET /api/orders
-```
-
-### Get Order Items
-
-```http
-GET /api/orders/{orderId}/items
-```
-
----
-
-# 🗄️ Database Design
-
-Database name:
-
-```text
-online_book_store_spring
-```
-
-The application uses four main tables:
-
-```text
-┌──────────────┐
-│    users     │
-└──────────────┘
-
-┌──────────────┐
-│    books     │
-└──────────────┘
-
-┌──────────────┐
-│    orders    │
-└──────────────┘
-
-┌──────────────┐
-│ order_items  │
-└──────────────┘
-```
-
----
-
-## Users Table
-
-Stores registered user information.
-
-| Column | Description |
-|---|---|
-| id | Unique user ID |
-| name | User name |
-| email | User email |
-| password | BCrypt hashed password |
-
----
-
-## Books Table
-
-Stores the bookstore catalogue.
-
-| Column | Description |
-|---|---|
-| id | Unique book ID |
-| title | Book title |
-| author | Book author |
-| category | Book category |
-| price | Book price |
-| description | Book description |
-| image_url | Book image URL |
-
----
-
-## Orders Table
-
-Stores customer order information.
-
-| Column | Description |
-|---|---|
-| id | Unique order ID |
-| user_id | Associated user ID |
-| full_name | Customer name |
-| email | Customer email |
-| phone | Customer phone |
-| address | Delivery address |
-| city | Delivery city |
-| pincode | Delivery pincode |
-| total | Order total |
-| status | Order status |
-| order_date | Date and time of order |
-
----
-
-## Order Items Table
-
-Stores individual books belonging to an order.
-
-| Column | Description |
-|---|---|
-| id | Unique order item ID |
-| order_id | Associated order ID |
-| book_id | Associated book ID |
-| quantity | Quantity ordered |
-| price | Book price |
-
----
-
-# 🔗 Database Relationship
-
-The order structure can be represented as:
-
-```text
-                 ┌──────────────┐
-                 │    users     │
-                 └──────┬───────┘
-                        │
-                        │ user_id
-                        ▼
-                 ┌──────────────┐
-                 │    orders    │
-                 └──────┬───────┘
-                        │
-                        │ order_id
-                        ▼
-                 ┌──────────────┐
-                 │ order_items  │
-                 └──────┬───────┘
-                        │
-                        │ book_id
-                        ▼
-                 ┌──────────────┐
-                 │    books     │
-                 └──────────────┘
 ```
 
 ---
@@ -1023,41 +644,6 @@ The recommended testing sequence is:
 
 ---
 
-# 🎨 User Interface
-
-BOOKIFY uses a modern bookstore-inspired visual design.
-
-The interface focuses on:
-
-- Clean typography
-- Warm neutral colours
-- Minimal layouts
-- Clear navigation
-- Responsive design
-- Subtle animations
-- Readable content
-- Consistent spacing
-- Mobile-friendly layouts
-
-The design uses:
-
-- **DM Serif Display** for major headings
-- **Inter** for body text and interface elements
-
----
-
-# 📱 Responsive Design
-
-The frontend is designed to adapt to:
-
-- Desktop computers
-- Laptops
-- Tablets
-- Mobile phones
-
-Responsive CSS media queries are used to adjust layouts, spacing, typography, and navigation for smaller screens.
-
----
 
 # 📚 Sample Book Catalogue
 
@@ -1154,19 +740,12 @@ The following features can be added in future versions:
 
 ---
 
-# 📌 Current Limitations
+### Screenshots
+<img width="1917" height="870" alt="Screenshot 2026-09-08 185800" src="https://github.com/user-attachments/assets/efa06b07-f935-4b9b-a036-4cea48f40fe8" />
+<img width="1917" height="866" alt="Screenshot 2026-09-08 185903" src="https://github.com/user-attachments/assets/37b537eb-6850-48c4-ace2-2f4fb0e3e987" />
 
-The current version is primarily designed for educational and portfolio purposes.
 
-Future versions can improve:
 
-- Authentication using JWT
-- Server-side cart storage
-- Role-based access control
-- Server-side order validation
-- Payment processing
-- Production-ready secret management
-- Deployment configuration
 
 ---
 
@@ -1178,12 +757,7 @@ Future versions can improve:
 
 **BOOKIFY — Online Book Store**
 
-### Technologies
 
 **React | Spring Boot | MySQL**
 
----
 
-# 📄 License
-
-This project was developed for educational and portfolio purposes.
