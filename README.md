@@ -740,9 +740,35 @@ The following features can be added in future versions:
 
 ---
 
-### Screenshots
+## Screenshots
 <img width="1917" height="870" alt="Screenshot 2026-09-08 185800" src="https://github.com/user-attachments/assets/efa06b07-f935-4b9b-a036-4cea48f40fe8" />
+
+### After login, Home Page:
 <img width="1917" height="866" alt="Screenshot 2026-09-08 185903" src="https://github.com/user-attachments/assets/37b537eb-6850-48c4-ace2-2f4fb0e3e987" />
+<img width="1917" height="867" alt="Screenshot 2026-09-08 185914" src="https://github.com/user-attachments/assets/0fee8bc8-92e2-4ed3-84b9-23b75eaaf727" />
+<img width="1917" height="868" alt="Screenshot 2026-09-08 185927" src="https://github.com/user-attachments/assets/3f371ad4-7326-4473-beb0-805b29c22f84" />
+<img width="1917" height="863" alt="Screenshot 2026-09-08 185950" src="https://github.com/user-attachments/assets/144c4fe9-829a-4693-b530-38260512da37" />
+<img width="1917" height="867" alt="Screenshot 2026-09-08 190002" src="https://github.com/user-attachments/assets/1bf79002-c08c-4b1e-883a-094c80f871cd" />
+
+### Catalogue Page:
+<img width="1915" height="872" alt="Screenshot 2026-09-08 190022" src="https://github.com/user-attachments/assets/f749af52-9f80-4dbf-9f5c-f8dabf127e65" />
+<img width="1917" height="868" alt="Screenshot 2026-09-08 190037" src="https://github.com/user-attachments/assets/3fde4cb1-bd36-4029-a332-5f8d66f25147" />
+Filter and search by categories
+<img width="1917" height="875" alt="Screenshot 2026-09-08 190049" src="https://github.com/user-attachments/assets/02c9f3ae-6479-4487-85f9-e8de129d71b0" />
+<img width="1916" height="867" alt="Screenshot 2026-09-08 190103" src="https://github.com/user-attachments/assets/badd83b1-8b9c-499a-9d9d-431a2e1d32d1" />
+<img width="1917" height="867" alt="Screenshot 2026-09-08 190116" src="https://github.com/user-attachments/assets/16540a56-5e51-4b54-a921-8426ea235a81" />
+
+### Add to cart
+<img width="1917" height="871" alt="Screenshot 2026-09-08 190151" src="https://github.com/user-attachments/assets/c47c681f-5d54-4454-91c8-c669ac421109" />
+<img width="1917" height="871" alt="Screenshot 2026-09-08 190204" src="https://github.com/user-attachments/assets/7ff92556-1224-4fe9-92bc-0c1dfcf32930" />
+
+### Place Order
+<img width="1917" height="858" alt="Screenshot 2026-09-08 190233" src="https://github.com/user-attachments/assets/3249f261-d8ae-437e-af79-6e1e30eda0cf" />
+<img width="1917" height="872" alt="Screenshot 2026-09-08 190316" src="https://github.com/user-attachments/assets/c0c05805-e952-4cd3-a4ef-95c46057ecbc" />
+<img width="1917" height="866" alt="Screenshot 2026-09-08 190331" src="https://github.com/user-attachments/assets/f2732c95-2483-463e-89ac-d3075f919dd8" />
+
+
+
 
 
 
